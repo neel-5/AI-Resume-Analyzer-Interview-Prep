@@ -8,11 +8,17 @@ Email: `param5saxena@gmail.com`
 
 ## Preview
 
-Add final screenshots in `docs/screenshots/` before publishing:
+| Landing | Dashboard |
+|--------|----------|
+| ![](docs/screenshots/landing-page.png.png) | ![](docs/screenshots/dashboard.png.png) |
 
-| Landing | Dashboard | Resume Analysis |
-| --- | --- | --- |
-| `docs/screenshots/landing-page.png` | `docs/screenshots/dashboard.png` | `docs/screenshots/resume-analysis.png` |
+| Resume Analysis | JD Match |
+|----------------|----------|
+| ![](docs/screenshots/resume-analysis.png.png) | ![](docs/screenshots/jd-match.png.png) |
+
+| Interview Assistant | Chatbot | Admin Dashboard |
+|-------------------|---------|----------------|
+| ![](docs/screenshots/interview-assistant.png.png) | ![](docs/screenshots/chatbot.png.png) | ![](docs/screenshots/admin-dashboard.png.png) |
 
 ## Features
 
@@ -24,35 +30,34 @@ Add final screenshots in `docs/screenshots/` before publishing:
 - Interview question generation for HR, technical, projects, SQL, Python, and data science/ML
 - Context-aware chatbot for resume and interview preparation
 - Dashboard analytics with Chart.js visualizations
-- Signup/login with JWT authentication and bcrypt password hashing
+- Signup/login with JWT authentication and secure password hashing
 - MySQL-backed analysis history
 - Admin dashboard for users, usage stats, and activity analytics
 
 ## Tech Stack
 
-**Frontend**
-
+### Frontend
 - React.js
 - Tailwind CSS
 - Framer Motion
 - Chart.js / react-chartjs-2
 - lucide-react
 
-**Backend**
-
+### Backend
 - FastAPI
 - SQLAlchemy
 - JWT auth
 - MySQL
 
-**AI/NLP & File Processing**
-
+### AI/NLP & File Processing
 - spaCy-ready parsing flow
 - scikit-learn TF-IDF and cosine similarity
 - sentence-transformers semantic similarity
 - transformers dependency included for extensibility
-- PyPDF2, pdfplumber, python-docx
-- OpenAI dependency included as optional extension
+- PyPDF2
+- pdfplumber
+- python-docx
+- OpenAI optional integration
 
 ## Folder Structure
 
@@ -99,28 +104,14 @@ HireSense AI - Resume Analyzer & Interview Prep Assistant/
 
 ## Quick Start
 
-### 1. Clone and enter the project
+### Clone Repository
 
 ```bash
-git clone https://github.com/your-username/hiresense-ai.git
-cd hiresense-ai
+git clone https://github.com/neel-5/AI-Resume-Analyzer-Interview-Prep.git
+cd AI-Resume-Analyzer-Interview-Prep
 ```
 
-### 2. Start MySQL
-
-With Docker:
-
-```bash
-docker compose up -d mysql
-```
-
-Or create the database manually:
-
-```bash
-mysql -u root -p < database/schema.sql
-```
-
-### 3. Backend setup
+### Backend Setup
 
 ```bash
 cd backend
@@ -131,17 +122,19 @@ copy .env.example .env
 uvicorn app.main:app --reload
 ```
 
-Backend runs at `http://localhost:8000`.
+Backend:
+```text
+http://localhost:8000
+```
 
-FastAPI docs:
-
+API Docs:
 ```text
 http://localhost:8000/docs
 ```
 
-### 4. Frontend setup
+### Frontend Setup
 
-Open a second terminal:
+Open another terminal:
 
 ```bash
 cd frontend
@@ -150,11 +143,14 @@ copy .env.example .env
 npm run dev
 ```
 
-Frontend runs at `http://localhost:5173`.
+Frontend:
+```text
+http://localhost:5173
+```
 
 ## Environment Variables
 
-Backend `backend/.env`:
+Backend `.env`
 
 ```env
 APP_NAME=HireSense AI API
@@ -166,10 +162,9 @@ ADMIN_EMAIL=param5saxena@gmail.com
 UPLOAD_DIR=storage/uploads
 OPENAI_API_KEY=
 ENABLE_OPENAI=false
-SENTENCE_TRANSFORMER_MODEL=all-MiniLM-L6-v2
 ```
 
-Frontend `frontend/.env`:
+Frontend `.env`
 
 ```env
 VITE_API_URL=http://localhost:8000/api
@@ -177,9 +172,15 @@ VITE_API_URL=http://localhost:8000/api
 
 ## Admin Access
 
-The first account created with `ADMIN_EMAIL=param5saxena@gmail.com` receives the `admin` role automatically.
+First account created with:
 
-Recommended demo password while testing locally:
+```text
+param5saxena@gmail.com
+```
+
+gets automatic admin access.
+
+Demo password:
 
 ```text
 Param@12345
@@ -187,40 +188,35 @@ Param@12345
 
 ## API Documentation
 
-See [docs/API.md](docs/API.md) or run the backend and open:
+See:
+
+```text
+docs/API.md
+```
+
+or:
 
 ```text
 http://localhost:8000/docs
 ```
 
-## Sample Data
+## Sample Test Files
 
-Use these files to test the pipeline:
+Located in:
 
-- [sample_data/sample_resume.txt](sample_data/sample_resume.txt)
-- [sample_data/sample_job_description.txt](sample_data/sample_job_description.txt)
-- [sample_data/sample_analysis.json](sample_data/sample_analysis.json)
-
-For actual upload testing, export the sample resume text to PDF or DOCX.
-
-## GitHub Publishing Checklist
-
-- Add screenshots to `docs/screenshots/`
-- Update the repository URL in this README after creating the GitHub repo
-- Keep `.env` files private
-- Confirm MySQL credentials match `backend/.env`
-- Run backend and frontend build checks
-- Create the admin account with the configured developer email
+- sample_data/sample_resume.txt
+- sample_data/sample_job_description.txt
+- sample_data/sample_analysis.json
 
 ## Production Notes
 
-- Replace `SECRET_KEY` with a long random value
-- Use managed MySQL in production
-- Restrict CORS to the deployed frontend domain
-- Store uploaded resumes in object storage for deployed environments
-- Add Alembic migrations if the database schema will evolve
-- Add rate limiting and background jobs for heavier AI workloads
+- Replace SECRET_KEY
+- Use production MySQL
+- Restrict CORS
+- Store uploads in object storage
+- Add migrations
+- Add rate limiting
 
 ## License
 
-This project is licensed under the MIT License.
+MIT License
