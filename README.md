@@ -3,8 +3,8 @@
 **HireSense AI** is a production-style full-stack AI portfolio project for resume parsing, ATS scoring, job-description matching, AI suggestions, interview preparation, chatbot guidance, analytics, authentication, history, and admin usage monitoring.
 
 Built by **Param Saxena**  
-Phone: `9810363542`  
-Email: `param5saxena@gmail.com`
+Email: param5saxena@gmail.com
+LinkedIn: https://www.linkedin.com/in/param-saxena-050905ps/
 
 ## Preview
 
